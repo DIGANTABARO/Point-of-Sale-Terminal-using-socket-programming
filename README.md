@@ -10,7 +10,6 @@ gcc -o server server.c
 gcc -o client client.c
 
 #Run the server
-#argv[1] and arg[2]  are string pointer accept ip_address and port  respectively .
 ./server  input_ip_address  port_number
 
 #open new terminal which is in the same directory as executible present
