@@ -9,7 +9,7 @@
 #include<unistd.h>
 #include<ctype.h>
 
-#define SERVER_PORT 27032
+
 #define MAXLINE 100
 
 void signal_handler(int sig); //programmer-defined signal handler for Ctrl+C command
@@ -41,7 +41,7 @@ int main(int argc, char *argv[])
 		printf("\nToo few arguments to server!..exiting");
 		exit(0);
 	}
-
+	int SERVER_PORT = atoi(argv[2]);
 	//creating the socket
 	listensd=socket(AF_INET,SOCK_STREAM,0); //socket(internet_family,socket_type,protocol_value) retruns socket descriptor
 	if(listensd<0)
@@ -52,7 +52,7 @@ int main(int argc, char *argv[])
 
 	//initializing the server socket
 	ServAddr.sin_family=AF_INET;
-	ServAddr.sin_addr.s_addr = inet_addr("127.0.0.1"); //using the local system IP (loop back address)
+	ServAddr.sin_addr.s_addr = inet_addr(arg[1]); //using the input IP 
 	ServAddr.sin_port = htons(SERVER_PORT); //self defined server port
 
 	//checking server ip and port number
