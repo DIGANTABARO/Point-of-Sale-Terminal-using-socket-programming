@@ -10,7 +10,7 @@
 #include<unistd.h>
 #include<ctype.h>
 
-#define SERVER_PORT 27032
+
 #define MAXLINE 100
 
 int command_process(int); //client places request with this command
@@ -22,6 +22,7 @@ int sockfd; //client socket descriptor
 int main(int argc, char *argv[])
 {
 	int check;
+	int SERVER_PORT = atoi(argv[2]);
 	struct sockaddr_in ServAddr;
 
 	//creating the socket
@@ -36,7 +37,7 @@ int main(int argc, char *argv[])
 	
 	//initializing the server socket
 	ServAddr.sin_family=AF_INET;
-	ServAddr.sin_addr.s_addr = inet_addr("127.0.0.1"); //using the local system IP (look back address)
+	ServAddr.sin_addr.s_addr = inet_addr(arg[1]); //using the imput IP 
 	ServAddr.sin_port = htons(SERVER_PORT); //self defined server port
 
 	if((connect(sockfd,(struct sockaddr *) &ServAddr,sizeof(ServAddr)))<0)
