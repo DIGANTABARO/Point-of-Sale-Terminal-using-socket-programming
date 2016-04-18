@@ -1,12 +1,10 @@
 # Point-of-Sale-Terminal-using-socket-programming
 Use socket programming to implement a simple client and server that communicate over the network and implement a simple application involving Cash Registers.
 
-Server is 
-
-Tested Linux Environmented
+Server is Tested Linux Environmented
 Execute as follows:-
 
-gcc -o server server.c
+gcc -o server server.c  \n
 gcc -o client client.c
 
 #Run the server
