@@ -4,7 +4,8 @@ Use socket programming to implement a simple client and server that communicate 
 Server is Tested Linux Environmented
 Execute as follows:-
 
-gcc -o server server.c  \n
+gcc -o server server.c 
+
 gcc -o client client.c
 
 #Run the server
